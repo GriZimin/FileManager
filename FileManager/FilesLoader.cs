@@ -9,11 +9,7 @@ using System.Windows.Controls;
 namespace FileManager
 {
     public class FilesGetter
-    {
-        public FilesGetter()
-        {
-
-        }
+    {        
         public List<DirectoryInfo> GetDirs(string path)
         {
             List<DirectoryInfo> res = new List<DirectoryInfo>();

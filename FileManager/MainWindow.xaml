@@ -27,6 +27,8 @@
                 </MenuItem.Header>
             </MenuItem>
             <MenuItem Header="Find" Foreground="White" Background="#51A6D6" Click="Find_Click"/>
+            <MenuItem Header="Back" Foreground="White" Background="#51A6D6" Click="Back_Click"/>
+            <MenuItem Header="Up" Foreground="White" Background="#51A6D6" Click="Up_Click"/>
         </Menu>
         <!--/Верхнее меню-->
         <!--Закладки-->
@@ -42,19 +44,26 @@
         <!--/Закладки-->
         <!--Основное окно-->
         <Grid Grid.Row="1" Grid.Column="1" Background="#00204A">
-            <ListBox x:Name="MainListBox" Margin="15,15,15,15"  Grid.Row="1" Grid.Column="1" MouseDoubleClick="MainListBox_MouseDoubleClick">
+            <ListBox x:Name="MainListBox" Margin="15,15,15,15"  Grid.Row="1" Grid.Column="1" MouseDoubleClick="MainListBox_MouseDoubleClick" FontSize="16" FontFamily="Microsoft New Tai Lue">
                 <ListBox.Template>
                     <ControlTemplate>
-                        <StackPanel Background="#51A6D6" Margin="0,0,0,0" IsItemsHost="True"/>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" Background="#00204A">
+                            <StackPanel Background="#51A6D6" Margin="0,0,0,0" IsItemsHost="True"/>
+                        </ScrollViewer>
                     </ControlTemplate>
                 </ListBox.Template>
-                <ListBox.InputBindings>
-                    <MouseBinding MouseAction="LeftDoubleClick"
-                                  Command="{Binding   MainWindow.MainListBox_DoubleClick}"
-                                  />
-                </ListBox.InputBindings>
+                <ListBox.Style>
+                    <Style TargetType="ListBox">
+                        <Style.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="15"/>
+                            </Style>
+                        </Style.Resources>
+                    </Style>
+                </ListBox.Style>
             </ListBox>
         </Grid>
+        <!--/Основное окно-->
     </Grid>
 </Window>
 
