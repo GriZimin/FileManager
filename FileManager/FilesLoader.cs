@@ -11,7 +11,7 @@ namespace FileManager
     public class FilesGetter
     {        
         public List<DirectoryInfo> GetDirs(string path)
-        {
+        {            
             List<DirectoryInfo> res = new List<DirectoryInfo>();
             try
             {
